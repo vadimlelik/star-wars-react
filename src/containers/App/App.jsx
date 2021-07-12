@@ -1,8 +1,8 @@
 import styles from './App.module.css';
-import { getApiResourse } from '../../utils/network';
+import PeoplePage from '../PeoplePage/';
 
 const App = () => {
-  return <div className={styles.header}>Hello World</div>;
+  return <PeoplePage />;
 };
 
 export default App;
