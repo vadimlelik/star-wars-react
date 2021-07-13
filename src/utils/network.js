@@ -1,4 +1,4 @@
-export const getApiResourse = async (url) => {
+export const getApiResource = async (url) => {
   try {
     const res = await fetch(url);
     if (!res.ok) {
