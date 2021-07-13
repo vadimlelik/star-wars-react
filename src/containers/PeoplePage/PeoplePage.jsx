@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'
 
 import {withErrorApi} from '@hoc-healpers/withErrorApi'
 import { getApiResource } from '@utilits/network';
@@ -43,6 +44,9 @@ const PeoplePage = ({ setErrorApi }) => {
           {people && <PeopleList people={people} />}
       </>
   )
+}
+PeoplePage.prototype ={
+  setErrorApi:PropTypes.func
 }
 
 export default withErrorApi(PeoplePage);
