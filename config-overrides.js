@@ -12,6 +12,8 @@ module.exports = function override(config, env) {
     '@utilits': 'src/utilits',
     '@styles': 'src/styles',
     '@PeoplePage': 'src/PeoplePage',
+    '@routes': 'src/routes',
+    '@static': 'src/static',
   })(config);
 
   return config;
