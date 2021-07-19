@@ -1,2 +1,1 @@
-import PeoplePage from './PeoplePage';
-export default PeoplePage;
+export { default } from './PeoplePage';

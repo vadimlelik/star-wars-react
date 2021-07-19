@@ -1,42 +1,41 @@
-import {
-  HTTPS,
-  HTTP
-} from '@constants/api'
+import { HTTP, HTTPS } from '@constants/api';
 
 /**
- * Отправляет запрос feth
- * @param {string} url url для запросов 
- * @returns {Promise} Promise с результатом запроса  
+ * Изменяет URL с HTTP на HTTPS
+ * @param {String} url - url для изменения
+ * @returns {String} - url с HTTPS
  */
-export const getApiResource = async (url) => {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      console.log('Could not fetch', res.status);
-      return false;
-    }
-    return await res.json();
-  } catch (error) {
-    console.error(error.message);
-    return false;
-  }
-};
+export const changeHTTP = url => {
+    const result = url ? url.replace(HTTP, HTTPS) : url;
 
-/**
- * Изменяет HTTP на HTTPS 
- * @param {string} url -url для изменения 
- * @returns это url с HTTPS
- */
-
-
-export const changeHTTP = (url) => {
-  const result = url ? url.replace(HTTP, HTTPS) : url
-  return result
+    return result;
 }
 
-// getApiResourse(`${SWAPI_ROOT}${SWAPI_PEPLE}`).then((body) => console.log(body));
+/**
+ * Отправляет запрос Fetch
+ * @param {String} url - url для запроса
+ * @returns {Promise} - Promise с результатом запроса
+ */
+export const getApiResource = async (url) => {
+    try {
+        const res = await fetch(url);
+
+        if (!res.ok) {
+            console.error('Could not fetch.', res.status);
+            return false;
+        }
+
+        return await res.json(); 
+    } catch (error) {
+        console.error('Could not fetch.', error.message);
+        return false;
+    }
+}
+
+// getApiResource(SWAPI_ROOT+SWAPI_PEOPLE)
+//     .then(body => console.log(body))
 
 // (async () => {
-//   const body = await getApiResourse(`${SWAPI_ROOT}${SWAPI_PEPLE}`);
-//   console.log(body);
+//     const body = await getApiResource(SWAPI_ROOT+SWAPI_PEOPLE);
+//     console.log(body);
 // })();

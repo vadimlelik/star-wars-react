@@ -1,11 +1,11 @@
-import React from 'react';
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h1 className='header__text'>HomePage</h1>
-    </div>
-  );
+    return (
+        <>
+            <h1 className="header__text">Home Page</h1>
+        </>
+    )
 }
 
 export default HomePage;

@@ -1,2 +1,1 @@
-import PeopleList from './PeopleList';
-export default PeopleList
+export { default } from './PeopleList';

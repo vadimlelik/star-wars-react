@@ -1,2 +1,1 @@
-import PeopleNavigation from './PeopleNavigation'
-export default PeopleNavigation
+export { default } from './PeopleNavigation';
