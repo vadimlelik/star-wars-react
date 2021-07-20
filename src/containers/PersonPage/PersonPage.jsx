@@ -7,6 +7,7 @@ import { getPeopleImage } from '@services/getPeopleData';
 import { getApiResource } from '@utils/network';
 import { API_PERSON } from '@constants/api';
 import styles from './PersonPage.module.css';
+import PersonLinkBack from '../../components/PersonLinkBack/PersonLinkBack';
 
 
 const PersonPage = ({ match, setErrorApi }) => {
@@ -50,6 +51,7 @@ const PersonPage = ({ match, setErrorApi }) => {
 
   return (
     <>
+      <PersonLinkBack />
       <div className={styles.wrapper}>
         <span className={styles.person__name} >{personName}</span>
         <div className={styles.container} >
