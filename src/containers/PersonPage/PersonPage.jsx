@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
 import PersonInfo from '@components/PersonPage/PersonInfo';
 import PersonPhoto from '@components/PersonPage/PersonPhoto';
+import PersonFilms from '@components/PersonPage/PersonFilms';
 import { withErrorApi } from '@hoc-helpers/withErrorApi';
 import { getPeopleImage } from '@services/getPeopleData';
 import { getApiResource } from '@utils/network';
@@ -14,6 +15,7 @@ const PersonPage = ({ match, setErrorApi }) => {
   const [personInfo, setPersonInfo] = useState(null)
   const [personName, setPersonName] = useState(null)
   const [personPhoto, setPersonPhoto] = useState(null)
+  const [personFilms, setpersonFilms] = useState(null)
 
 
   useEffect(() => {
@@ -23,7 +25,6 @@ const PersonPage = ({ match, setErrorApi }) => {
       const res = await getApiResource(`${API_PERSON}/${id}/`)
       if (res) {
         setErrorApi(false);
-        console.log(res);
         setPersonInfo([
           { title: 'Height', data: res.height },
           { title: 'Mass', data: res.mass },
@@ -36,7 +37,8 @@ const PersonPage = ({ match, setErrorApi }) => {
         ]);
         setPersonName(res.name);
         setPersonPhoto(getPeopleImage(id))
-        // res.films
+
+        res.films.length && setpersonFilms(res.films)
 
       } else {
         setErrorApi(true);
@@ -61,6 +63,8 @@ const PersonPage = ({ match, setErrorApi }) => {
 
           />
           {personInfo && <PersonInfo personInfo={personInfo} />}
+          {personFilms && <PersonFilms personFilms={personFilms} />}
+
         </div>
       </div>
     </>
