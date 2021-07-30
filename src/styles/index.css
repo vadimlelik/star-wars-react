@@ -37,8 +37,15 @@
   --box-shadow-black: 0 16px 24px 2px rgba(0, 0, 0, 0.5), 0 6px 30px 5px rgba(0, 0, 0, 0.1),
     0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
-  --theme-default-header: #cccc46;
-  --theme-default-bgimage: url(@static/bg.jpg);
+  --theme-light-header: #dfe2df;
+  --theme-dark-header: #ca6c6f;
+  --theme-neitral-header: #cccc46;
+  --theme-default-header: var(--theme-neitral-header);
+
+  --theme-light-bgimage: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  --theme-dark-bgimage: linear-gradient(to right top, #6b1d6f, #475da2, #448bb1, #81afb5, #c7cfcc);
+  --theme-neitral-bgimage: url(@static/bg.jpg);
+  --theme-default-bgimage: var(--theme-neitral-bgimage);
 }
 
 body {
