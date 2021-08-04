@@ -11,7 +11,7 @@ const ErrorMessage = () => {
         We cannot display data.<br />
         Come back when we fix everything
       </p>
-      <UiVideo src={errorVideo} className={styles.video} />
+      <UiVideo src={errorVideo}classes={styles.video} playbackRate={1} />
     </>
   )
 }
